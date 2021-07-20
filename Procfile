@@ -1,1 +1,1 @@
-web: gunicorn encrypt_decrypt.wsgi
+web: gunicorn encrypt_decrypt.wsgi --log-file -
