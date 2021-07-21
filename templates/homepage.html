@@ -7,9 +7,11 @@
 </head>
 <body>
 
-<br>
-<center><h1>Encrypt Decrypt App</h1></center><br>
+<div class="alert alert-success d-flex justify-content-center" role="alert">
+    <h1>Encrypt Decrypt App</h1><br>
+</div>
 
+<br>
 <form action="result" method="post">{% csrf_token %}
     <center>
         <textarea name="text" class="alert alert-secondary " role="alert" style="margin: 0px; height: 191px; width: 613px;" placeholder="Enter your text here."></textarea>
@@ -21,12 +23,14 @@
 
 <br><br><br><br><br>
 
-<h5>&nbsp How to Use:</h5>
-<p>
-    &nbsp 1. Enter you text in the text field.<br>
-    &nbsp 2. Based on whether you want to encrypt or decrypt your text. Click one of the following: Encrypt / Decrypt
-</p>
 
+<div class="alert alert-info" role="alert">
+    <h5>&nbsp How to Use:</h5>
+    <p>
+        &nbsp 1. Enter you text in the text field.<br>
+        &nbsp 2. Based on whether you want to encrypt or decrypt your text. Click one of the following: Encrypt / Decrypt
+    </p>
+</div>
 
 </body>
 </html>

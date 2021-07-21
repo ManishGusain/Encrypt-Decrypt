@@ -47,3 +47,4 @@ def encrypt_decrypt(request):
             param = {'result': n, 'btn': 'Decrypted'}
 
     return render(request, 'result.html', param)
+
