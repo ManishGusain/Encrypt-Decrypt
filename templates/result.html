@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <title>Result</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -10,14 +12,33 @@
 <br>
 <center>
     <h1>Your {{ btn }} Text is:</h1><br>
-    <h1 class="alert alert-info" role="alert">{{ result }}</h1>
+    <h1 class="alert alert-info" role="alert" id="result_text">{{ result }}</h1>
+    <button type="submit" name="btn_copy" value="btn_copy" class="btn btn-primary" onclick="copy_result()">Copy</button>
+    <a href="{% url 'homepage' %}"><button type="submit" class="btn btn-primary">Home</button></a>
 </center>
+
 
 <!--Footer-->
 <div class="text-white bg-dark text-center fixed-bottom">© 2021 Copyright:
     <a href="https://tocipher.herokuapp.com/"> Encrypt-Decrypt</a>
 </div>
 <!--Footer End-->
+
+<script>
+    function copy_result(){
+    result = document.getElementById("result_text").innerHTML;
+
+    let copy_res = document.createElement("Textarea");
+    copy_res.value = result;
+
+    document.body.appendChild(copy_res);
+    copy_res.select();
+    document.execCommand("copy");
+    document.body.removeChild(copy_res)
+
+    alert("Copied!!");
+    }
+</script>
 
 </body>
 </html>

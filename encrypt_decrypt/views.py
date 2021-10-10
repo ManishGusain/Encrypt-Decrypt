@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 
 def homepage(request):
-    return render(request, 'login_user.html')
+    return render(request, 'homepage.html')
 
 def encrypt_decrypt(request):
     def encryption(text):
